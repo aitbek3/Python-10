@@ -1,6 +1,6 @@
 from django.db import models
 
-# 1️⃣ Авторлор таблицасы
+
 class Author(models.Model):
     name = models.CharField(max_length=100)
     birth_year = models.IntegerField(null=True, blank=True)
@@ -9,7 +9,6 @@ class Author(models.Model):
         return self.name
 
 
-# 2️⃣ Китептер таблицасы
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
@@ -19,7 +18,6 @@ class Book(models.Model):
         return self.title
 
 
-# 3️⃣ Жанр (категория)
 class Genre(models.Model):
     name = models.CharField(max_length=100)
 
